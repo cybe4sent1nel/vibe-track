@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VibeTrack - Task Management App with AWS Cognito Authentication">
+    <meta name="author" content="Designed & Developed by Fahad Khan">
+    
+    <link rel="icon" href="img/ico.png" type="image/png">
+    <title>VibeTrack - Login</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .login-container {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            max-width: 500px;
+            width: 90%;
+        }
+        
+        .icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 48px;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #718096;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .description {
+            font-size: 14px;
+            color: #718096;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 16px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .footer-text {
+            font-size: 12px;
+            color: #a0aec0;
+            margin-top: 20px;
+        }
+        
+        .developer {
+            font-size: 12px;
+            color: #a0aec0;
+            margin-top: 10px;
+        }
+        
+        .developer strong {
+            color: #667eea;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="icon">📓</div>
+        <h1>VibeTrack</h1>
+        <p class="subtitle">Task Management Made Simple</p>
+        <p class="description">Manage your tasks efficiently with secure AWS Cognito authentication</p>
+        <button id="loginBtn" class="login-btn">
+            🔐 Login with Cognito
+        </button>
+        <p class="footer-text">Secure authentication powered by AWS Cognito</p>
+        <p class="developer">Designed & Developed by <strong>Fahad Khan</strong></p>
+    </div>
+    
+    <script>
+        // Cognito Configuration
+        const COGNITO_CONFIG = {
+            clientId: '7mokvk5tqv573od87hn5vos73p',
+            domain: 'ap-south-2qfrr8lliz.auth.ap-south-2.amazoncognito.com',
+            redirectUri: 'https://stirring-dasik-97fa57.netlify.app/redirect.html'
+        };
+
+        // Get the button and add click handler
+        document.getElementById('loginBtn').addEventListener('click', function() {
+            console.log('=== LOGIN BUTTON CLICKED ===');
+            
+            const clientId = COGNITO_CONFIG.clientId;
+            const domain = COGNITO_CONFIG.domain;
+            const redirectUri = COGNITO_CONFIG.redirectUri;
+            
+            // Build Cognito login URL
+            const cognitoUrl = `https://${domain}/login?client_id=${clientId}&response_type=code&scope=email+openid+phone&redirect_uri=${encodeURIComponent(redirectUri)}`;
+            
+            console.log('Cognito URL:', cognitoUrl);
+            console.log('Redirecting to Cognito...');
+            
+            // Redirect to Cognito
+            window.location.href = cognitoUrl;
+        });
+    </script>
+</body>
+
+</html>
