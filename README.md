@@ -1,5 +1,5 @@
 # Vibetrack — TaskTracker
-<img src="raw.githubusercontent.com" width="20" height="20" alt="Verified Badge">
+# Vibetrack — TaskTracker <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM2NjdlZWE7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6Izc2NGJhMjtzdG9wLW9wYWNpdHk6MSIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIAogIDwhLS0gQmFja2dyb3VuZCBjaXJjbGUgLS0+CiAgPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMTAiIGZpbGw9InVybCgjZ3JhZCkiLz4KICA8IS0tIElubmVyIHdoaXRlIGNpcmNsZSAtLT4KICA8Y2lyY2xlIGN4PSIxMCIgY3k9IjEwIiByPSI3IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC45NSIvPgogIDwhLS0gQ2hlY2ttYXJrIC0tPgogIDxwYXRoIGQ9Ik0gNyAxMCBMIDkgMTIgTCAxMyA4IiBzdHJva2U9IiM2NjdlZWEiIHN0cm9rZS13aWR0aD0iMS41IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+" width="20" height="20" alt="Verified Badge">
 
 Vibetrack (TaskTracker) is a lightweight static frontend that demonstrates a simple task tracker and includes example serverless API handlers.
 
@@ -64,6 +64,7 @@ License
 
 Next steps
 - I can wire the add-task input in the UI to call `TaskAPI.createTask`, render tasks, and wire delete actions — tell me to proceed and I'll implement it.
+
 
 
 
