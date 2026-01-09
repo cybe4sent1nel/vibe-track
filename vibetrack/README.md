@@ -1,6 +1,6 @@
 # Vibetrack — TaskTracker
 
-<img src="img/blue-check.svg" alt="Vibetrack" width="48" />
+                                          <img src="img/blue-check.svg" alt="Vibetrack" width="48" />
 
 Vibetrack (TaskTracker) is a lightweight static frontend that demonstrates a simple task tracker and includes example serverless API handlers.
 
@@ -65,3 +65,4 @@ License
 
 Next steps
 - I can wire the add-task input in the UI to call `TaskAPI.createTask`, render tasks, and wire delete actions — tell me to proceed and I'll implement it.
+
