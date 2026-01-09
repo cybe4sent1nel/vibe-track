@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VibeTrack - Task Management App">
+    <meta name="author" content="Designed & Developed by Fahad Khan">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../img/ico.png" type="image/png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <title>VibeTrack - Task Management App</title>
+</head>
+
+<body>
+    <!-- Task Manager Page -->
+    <div class="home">
+        <div class="container-main">
+
+            <div class="container-left"  id="containerLeft">
+                <div class="dots">
+                    <div id="d1"></div>
+                    <div id="d2"></div>
+                    <div id="d3"></div>
+                </div>
+
+                <div class="profile center top">
+                    <img src="img/profile.png" alt="">
+                    <div>
+                        <p class="name" id="name">User</p>
+                        <p class="email" id="email">user@example.com</p>
+                    </div>
+                </div>
+
+                <div class="menu center">
+                    <div class="search-holder">
+                        <input type="search" name="search" id="search" placeholder=" Search">
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li id="o1"><a href="#"><i class='bx bx-sun' id="i1"></i><span>My day</span></a></li>
+                            <li id="o2"><a href="#"><i class='bx bx-grid' id="i2"></i><span>This week</span></a></li>
+                            <li id="o3"><a href="#"><i class='bx bx-calendar-event' id="i3"></i><span>This
+                                        month</span></a></li>
+                            <li id="o4"><a href="#"><i class='bx bx-extension' id="i4"></i><span>All tasks</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="logout center">
+                    <hr>
+                    <a href="#" id="logoutLink"><i class='bx bx-log-out'></i><span>Clear All</span></a>
+                </div>
+
+            </div>
+
+            <div class="container-right">
+
+                <div class="hamburger-container">
+                    <div class="burger" id="burgerIcon">
+                      <div class="line"></div>
+                      <div class="line"></div>
+                      <div class="line"></div>
+                    </div>
+                  </div>
+
+                <div class="container-sub center">
+                    <div class="header">
+                        <h2 id="header_title">No tasks</h2>
+                        <div class="buttons">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+
+                    <div class="card-holder" id="TaskContainer">
+                        <!-- Tasks will be rendered here -->
+                    </div>
+
+                    <div class="add-new ">
+                        <div class="card-new align">
+                            <div class="group1">
+                                <div style="width: 70%;"><i class='bx bx-plus'></i> <input type="text" name="todo"
+                                        id="todo" placeholder="Add a task" required></div>
+                                <div><input type="date" name="date" id="duedate" required></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <script src="../js/api.js"></script>
+    <script src="../js/script.js"></script>
+    
+    <script>
+        // Simple clear all functionality
+        document.getElementById('logoutLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            swal({
+                title: "Clear all tasks?",
+                text: "This will delete all your tasks. This cannot be undone.",
+                icon: "warning",
+                buttons: ["Cancel", "Clear All"],
+                dangerMode: true,
+            }).then((willClear) => {
+                if (willClear) {
+                    localStorage.clear();
+                    document.getElementById('TaskContainer').innerHTML = '';
+                    swal("All tasks cleared!", {
+                        icon: "success",
+                    });
+                }
+            });
+        });
+
+        // Update profile display on load
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('Task Manager Loaded');
+            
+            // Set default user display
+            const nameEl = document.getElementById('name');
+            const emailEl = document.getElementById('email');
+            
+            if (nameEl) nameEl.textContent = 'User';
+            if (emailEl) emailEl.textContent = 'user@example.com';
+        });
+    </script>
+</body>
+
+</html>
