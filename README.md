@@ -1,5 +1,5 @@
 # Vibetrack — TaskTracker
-<svg width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+img src=<svg width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <!-- Blue Square Background -->
   <rect x="10" y="10" width="80" height="80" rx="15" fill="#1DA1F2" />
   
@@ -71,6 +71,7 @@ License
 
 Next steps
 - I can wire the add-task input in the UI to call `TaskAPI.createTask`, render tasks, and wire delete actions — tell me to proceed and I'll implement it.
+
 
 
 
